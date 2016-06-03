@@ -97,10 +97,11 @@ environments {
 }
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'Person'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'PersonRole'
-grails.plugin.springsecurity.authority.className = 'Role'
-grails.plugin.springsecurity.config.apf.postOnly=false
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'bookstore.Person'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'bookstore.PersonRole'
+grails.plugin.springsecurity.authority.className = 'bookstore.Role'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl='/homePage/authenticate'
+grails.plugin.springsecurity.logout.postOnly= false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/':                ['permitAll'],
         '/index':           ['permitAll'],

@@ -4,7 +4,7 @@
             <h1 style="font-family: 'Monotype Corsiva'; color: blue"><b>NexThoughts...</b><small>   Everything at your doorstep!</small></h1>
         </div>
         <div class="col-md-1">
-            <a href="login/auth" id="login"><span class="glyphicon glyphicon-user"></span>Login</a>
+            <span class="glyphicon glyphicon-user" id="icon"></span><a href="login/auth" id="login">Login</a>
         </div>
     </div>
 </div>

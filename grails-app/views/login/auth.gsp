@@ -54,7 +54,7 @@
 <script>
     $(document).ready(function(){
         $('a[href^="login/auth"]').hide();
-
+        $('#icon').hide()
     });
 </script>
 
