@@ -23,7 +23,7 @@ class BootStrap {
 
         BookTitle book1=BookTitle.findByTitle('notebook')?: new BookTitle(title: 'notebook', numOfBuyers: 100, rating: 4.5, quantity: 2, price: 500, bookauthor:auth1)
         BookTitle book2=BookTitle.findByTitle('digital fortress')?: new BookTitle(title: 'digital fortress', numOfBuyers: 40, rating: 3, quantity: 1, price: 100,bookauthor:auth2)
-        
+
         auth1.save(flush: true,failOnError: true)
         auth2.save(flush: true,failOnError: true)
         book1.save(flush: true,failOnError: true)

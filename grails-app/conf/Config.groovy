@@ -100,10 +100,12 @@ environments {
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'Person'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'PersonRole'
 grails.plugin.springsecurity.authority.className = 'Role'
+grails.plugin.springsecurity.config.apf.postOnly=false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/':                ['permitAll'],
         '/index':           ['permitAll'],
         '/index.gsp':       ['permitAll'],
+        '/HomePage/index.gsp': ['permitAll'],
         '/assets/**':       ['permitAll'],
         '/**/js/**':        ['permitAll'],
         '/**/css/**':       ['permitAll'],
