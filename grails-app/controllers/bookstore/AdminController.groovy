@@ -9,10 +9,9 @@ class AdminController {
     }
 
     def createEntry(){
-        Boolean result=adminService.createEntry(params)
-        def success=g.message(code: 'entry.successfully.added')
+        def result=adminService.createEntry(params)
         if(result){
-            render(view: '/admin/index', model:[msg: success])
+            render('Success')
         }
     }
 }

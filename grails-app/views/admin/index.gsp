@@ -27,29 +27,14 @@
     </div>
 
     <div id="create" class="tab-pane fade">
-        <form class="form-inline" role="form" action="${createLink(controller: 'admin',action: 'createEntry')}" style="margin-top: 10%">
-            <div class="form-group" style="margin-left: 6%">
-                <label for="author">Author</label>
-                <input type="text" class="form-control" id="author" name="author">
-            </div>
-            <div class="form-group" style="margin-left: 2%">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title">
-            </div>
-            <div class="form-group" style="margin-left: 2%">
-                <label for="price">Price</label>
-                <input type="text" class="form-control" id="price" name="price">
-            </div>
-            <div class="form-group" style="margin-left: 2%">
-                <label for="quantity">Quantity</label>
-                <input type="text" class="form-control" id="quantity" name="quantity">
-            </div>
-            <button type="submit" class="btn btn-default" style="margin-left: 2%">Save</button>
-        </form>
+        <g:render template="/templates/create"/>
+    </div>
+
     <div id="menu2" class="tab-pane fade">
         <h3>Menu 2</h3>
         <p>Some content in menu 2.</p>
     </div>
+</div>
 </div>
 </body>
 <script>

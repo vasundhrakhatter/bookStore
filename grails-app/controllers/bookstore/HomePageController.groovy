@@ -18,7 +18,7 @@ class HomePageController {
                 redirect(controller: 'admin',action: 'index', params: [user: user.username])
         }
         else{
-                redirect(controller: 'user', action: 'index', params: [user: user])
+                redirect(controller: 'user', action: 'index', params: [user: user.username])
             }
         }
 }

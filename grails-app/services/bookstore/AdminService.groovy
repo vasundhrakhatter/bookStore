@@ -15,6 +15,9 @@ class AdminService {
        if(price >=300){
            affordability='high'
        }
+       else{
+           affordability='low'
+       }
 //       BookAuthor auth=BookAuthor.findAllByName(params.author)
 //       if(auth){
 //           numberOfBooks=auth.numOfBooks+1
