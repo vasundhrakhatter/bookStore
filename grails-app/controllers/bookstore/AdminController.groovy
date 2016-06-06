@@ -4,14 +4,28 @@ import org.springframework.security.access.annotation.Secured
 class AdminController {
     def adminService
     def index() {
-        println "*******"+params
-        render (view:'/admin/index', model: [user: params])
+        List<BookAuthor> listAuthors=adminService.listAuthors()
+        List<BookTitle> listTitles=adminService.listTitles()
+        println listAuthors+"*****************"
+        println listTitles+"***********************************"
+        render (view:'/admin/index', model: [user: params,listAuthor: listAuthors,listTitle: listTitles ])
     }
 
-    def createEntry(){
-        def result=adminService.createEntry(params)
+    def updateAuthor(){
+       List<BookAuthor> bookAuthor=BookAuthor.findAllByIdGreaterThanEquals(1)
+       render(view: '/admin/index', model: [list:bookAuthor])
+    }
+
+    def editAuthor(params){
+        BookAuthor bookAuthor=BookAuthor.findById(params.author)
+        render(view: "/admin/addAuthor", model: [author: bookAuthor])
+    }
+
+    def addBook(){
+        println "**************"+params
+        def result=adminService.addBook(params);
         if(result){
-            render('Success')
+            render(view: '/admin/index')
         }
     }
 }

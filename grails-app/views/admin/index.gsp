@@ -17,6 +17,7 @@
 </head>
 <body>
 <g:render template="/templates/header"/>
+
 <g:render template="/templates/adminNavigation"/>
 
 <div class="tab-content">
@@ -26,21 +27,33 @@
         <p style="text-align: center">Some content!</p>
     </div>
 
-    <div id="create" class="tab-pane fade">
-        <g:render template="/templates/create"/>
+    <div id="authors" class="tab-pane fade">
+        <g:render template="/templates/authors"/>
     </div>
 
-    <div id="menu2" class="tab-pane fade">
-        <h3>Menu 2</h3>
-        <p>Some content in menu 2.</p>
+    <div id="update" class="tab-pane fade">
+        <g:render template="/templates/update" model="[list:list]"/>
     </div>
 </div>
 </div>
 </body>
 <script>
     $(document).ready(function(){
-        $('a[href^="login/auth"]').html('LogOut');
+        if('${list}'){
+            $('#hideAuthor').hide();
+            $('#list').show();
+        }else {
+            $('#hideAuthor').show();
+            $('#list').hide();
+        }
+        $('.editAuthor').click(function(){
+            $('#newAuthor').show();
+        });
 
+        $('#${listAuthor.id}').click(function(){
+            $('#newAuthor').show();
+        });
     });
+
 </script>
 </html>

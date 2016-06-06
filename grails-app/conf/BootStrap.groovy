@@ -18,16 +18,13 @@ class BootStrap {
         PersonRole.create(admin,roleuser)
         PersonRole.create(user,roleuser)
 
-//        BookAuthor auth1=BookAuthor.findByName('spark')?: new BookAuthor(name: 'spark',numOfBooks: 10, popularity: 8, reasonability: 'high')
-//        BookAuthor auth2=BookAuthor.findByName('brown')?: new BookAuthor(name: 'brown',numOfBooks: 5,popularity: 4, reasonability: 'low')
-//
-//        BookTitle book1=BookTitle.findByTitle('notebook')?: new BookTitle(title: 'notebook', numOfBuyers: 100, rating: 4.5, quantity: 2, price: 500, bookauthor:auth1)
-//        BookTitle book2=BookTitle.findByTitle('digital fortress')?: new BookTitle(title: 'digital fortress', numOfBuyers: 40, rating: 3, quantity: 1, price: 100,bookauthor:auth2)
-//
-//        auth1.save(flush: true,failOnError: true)
-//        auth2.save(flush: true,failOnError: true)
-//        book1.save(flush: true,failOnError: true)
-//        book2.save(flush: true,failOnError: true)
+
+        BookTitle book1=BookTitle.findByTitle('notebook')?:new BookTitle(title: 'notebook',price: 500)
+        BookTitle book2=BookTitle.findByTitle('dearjohn')?:new BookTitle(title: 'dearjohn',price: 400)
+        BookAuthor bookAuthor=BookAuthor.findByFirstName('dan')?:new BookAuthor(lastName: 'brown', firstName: 'dan')
+        bookAuthor.addToBookTitles(book1).addToBookTitles(book2).save(flush: true, failOnError: true)
+        BookAuthor bookAuthor1=BookAuthor.findByFirstName('nicholas')?:new BookAuthor(lastName: 'spark',firstName: 'nicholas')
+        bookAuthor1.addToBookTitles(book1).save(flush: true,failOnError: true)
     }
     def destroy = {
     }

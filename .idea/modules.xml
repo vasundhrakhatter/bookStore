@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/bookStore.iml" filepath="$PROJECT_DIR$/bookStore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bookStore-grailsPlugins.iml" filepath="$PROJECT_DIR$/bookStore-grailsPlugins.iml" />
     </modules>
   </component>
 </project>
